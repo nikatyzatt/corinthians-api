@@ -5,7 +5,7 @@ class TeamController {
     static getAllTeams = (req, res) => {
       teams.find((err, teams) => {
         if(err) {
-          res.status(400).send({message: "Oops.. Internal Server Error"})
+          res.status(500).send({message: "Oops.. Internal Server Error"})
         } else {
           res.status(200).send(teams);
     }})
@@ -25,11 +25,11 @@ class TeamController {
 
     static addNewTeam = (req, res) => {
       let team = new teams(req.body);
-      const {name, state_id} = req.body;
+      const {name, state} = req.body;
 
       team.save((err) => {
 
-      if(!name || !state_id) {
+      if(!name || !state) {
         res.status(422).send({message: "Please define the name and state id"})
       } else
       if(err) {
@@ -42,10 +42,10 @@ class TeamController {
 
     static updateTeam = (req, res) =>{
       const id = req.params.id;
-      const {name, state_id} = req.body;
+      const {name, state} = req.body;
 
       teams.findByIdAndUpdate(id, {$set: req.body}, (err) => {
-        if(!name && !state_id) {
+        if(!name && !state) {
           res.status(422).send({message: "Please define name or state"})
         } else
         if(err) {
