@@ -4,6 +4,12 @@
 Este projeto teve como base o curso da Alura >> [Curso Nodejs](https://cursos.alura.com.br/course/nodejs-api-rest-express-mongodb).
 Foi criada uma API  com estilo arquitetural REST, usando o framework Express. A API foi conectada ao banco MongoDB.
 
+Foram criadas 3 coleções, com o tema Futebol Brasileiro. 
+À partir das rotas criadas em cada coleção, é possível adicionar Estados, times e cadastros de torcedores.
+Para criar um time, é necessário informar um estado já criado, e para criar um cadastro de torcedor, é necessário informar um time já criado.
+
+Times, estados e cadastros são únicos: não há como adicionar um estado/time com um nome já cadastrado, e não há como fazer um novo cadastro de torcedor usando um username já criado.
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 ### Criando rotas em coleções já existentes
