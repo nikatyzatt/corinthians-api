@@ -1,6 +1,6 @@
 import express from "express";
-import times from "./timesRoutes.js"
-import estados from "./estadosRoutes.js"
+import teams from "./teamsRoutes.js"
+import states from "./statesRoutes.js"
 
 const routes = (app) => {
   app.route('/').get((req, res) => {
@@ -9,8 +9,8 @@ const routes = (app) => {
 
   app.use(
     express.json(),
-    times,
-    estados
+    teams,
+    states
   )
 }
 
