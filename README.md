@@ -4,11 +4,13 @@
 Este projeto teve como base o curso da Alura >> [Curso Nodejs](https://cursos.alura.com.br/course/nodejs-api-rest-express-mongodb).
 Foi criada uma API  com estilo arquitetural REST, usando o framework Express. A API foi conectada ao banco MongoDB.
 
+Para usar essa API no seu local, crie/use uma conta no MongoDB, e altere os dados de conexão na pasta src/config/dbConnect.
+
 Foram criadas 3 coleções, com o tema Futebol Brasileiro. 
 À partir das rotas criadas em cada coleção, é possível adicionar Estados, times e cadastros de torcedores.
 Para criar um time, é necessário informar um estado já criado, e para criar um cadastro de torcedor, é necessário informar um time já criado.
 
-Times, estados e cadastros são únicos: não há como adicionar um estado/time com um nome já cadastrado, e não há como fazer um novo cadastro de torcedor usando um username já criado.
+Times, estados e cadastros são únicos: não há como adicionar um estado/time com um nome já cadastrado, e não há como fazer um novo cadastro de torcedor usando um username já cadastrado.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -48,4 +50,10 @@ Dentro da pasta src/routes
 >stadiumsRoutes.js
 
 Além disso, as rotas seriam importadas dentro do arquivo index.js na pasta src/routes:
-> import stadiums from "./stadiumsRoutes.js";
+> import stadiums from "./stadiumsRoutes.js"
+
+### Surprise
+
+Foi criada uma rota dentro do arquivo registersController.js na pasta src/controllers, onde é possível definir responses individuais para registros específicos. 
+
+>    .get("/cadastros/surpresa", RegisterController.findSurprise)
