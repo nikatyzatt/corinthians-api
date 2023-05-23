@@ -110,8 +110,21 @@ class RegisterController {
         res.status(404).send({ message: "No results. Check if you send the right data"});
         })
         }
+    
+            // Aqui você pode personalizar mensagens de acordo com o name (ou outro valor, se quiser alterar) dado pelo usuário
+        static findSurprise = (req, res) => {
+          const name = req.query.name;
+    
+            if(name === "corinthians" || name === "Corinthians" || name === "Nikole" || name === "nikole" || name === "Nika") {
+              res.status(200).send({message: "Viciado(a) em sofrer! VAI CORINTHIANSSS!!!!!    https://i.pinimg.com/originals/6d/46/e4/6d46e44024225b82a5c42445fb31cff0.jpg"})
+            }
 
-  
+            else {
+              res.status(404).send({message: "Hum.... Ainda não tenho uma resposta preparada para essa pessoa =("})
+            }
+          }
+        
+
 }
 
 export default RegisterController
